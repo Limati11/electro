@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './Header.css';
+import './header.css';
 import { Link, NavLink } from "react-router-dom"
 import { BiMenu } from 'react-icons/bi'
+import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 
 export default function Header() {
@@ -19,21 +20,22 @@ export default function Header() {
     return (
         <header>
 
-            <section className='header-container'>
-                <Link className="site-logo" to="/" >
-                    <h2>Electron</h2>
+            <section className='header-container' >
+                <Link className="site-logo" to="/" onClick={closeBurgerMenu}>
+                    <h2>Electro</h2>
                 </Link>
-                    <div className='burger-menu-icon' onClick={() => setIsBurgerMenuOpen(!isBurgerMenuOpen)}>
-                        <BiMenu />
+                    <div className='burger-menu-button' onClick={() => setIsBurgerMenuOpen(!isBurgerMenuOpen)}>
+                        <BiMenu style={{ width: '1.7rem', height: '1.7rem' }} />
                     </div>
             </section>
 
 
 
             <nav className={`burger-container ${isBurgerMenuOpen ? 'open' : ''}`}>
-                    <span className='burger-container-close-button'>  
-                        X
-                    </span>
+                        <div className='burger-container-close-button' onClick={closeBurgerMenu}>
+                            <AiOutlineCloseCircle style={{ width: '1.7rem', height: '1.7rem' }} />
+                        </div>
+
                     <div className="burger-container-inner">
                         <div className="account-row">
                                 <NavLink to="/magazine" 
@@ -54,13 +56,6 @@ export default function Header() {
                                     style={({ isActive }) => isActive ? activeStyles : null}
                                     onClick={closeBurgerMenu}>
                                     Conectare
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/next" 
-                                    style={({ isActive }) => isActive ? activeStyles : null}
-                                    onClick={closeBurgerMenu}>
-                                    Next
                                 </NavLink>
                             </li>
                             <li>
@@ -110,6 +105,13 @@ export default function Header() {
                                     style={({ isActive }) => isActive ? activeStyles : null}
                                     onClick={closeBurgerMenu}>
                                     Gadgeturi
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/Tradein" 
+                                    style={({ isActive }) => isActive ? activeStyles : null}
+                                    onClick={closeBurgerMenu}>
+                                    Tradein
                                 </NavLink>
                             </li>
                         </ul>

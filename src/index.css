@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff7ed;
+    font-family: "Pragmatica Book", Helvetica Neue, Arial;
+}
+
+ul, li {
+    list-style: none;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+

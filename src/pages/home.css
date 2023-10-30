@@ -1,0 +1,128 @@
+.home-container {
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* grid-template-rows: repeat(5, 1fr); */
+    grid-template-areas: 
+        "s s s s s s s s s s s s"
+        "t t t t t t t t t t t t"
+        "p p p p p p p p p p p p"
+        "h h h h h h h h h h h h";
+    grid-row-gap: 3rem;
+}
+
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-height: 100%;
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+.container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* SLIDER */
+.home-container-slider {
+    grid-area: s;
+}
+.home-container-slider .slick-slide img {
+    width: 100%;
+    /* height: 100%; */
+    /* object-fit: cover; */
+}
+
+
+/* TRADEIN */
+.home-container-tradein {
+    grid-area: t;
+}
+.tradein-image img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+/* PRODUCTS */
+.home-container-products {
+    grid-area: p;
+    /* border: 1px solid red; */
+}
+.home-container-products img {
+    border-radius: 10px;
+}
+.down {
+    display: flex;
+    padding-top: 1rem ;
+    gap: 1rem;
+}
+.casti, .watch, .boxe {
+    width: 100%;
+    position: relative;
+}
+.casti>h3, .watch>h3, .boxe>h3 {
+    position: absolute;
+    bottom: -1rem; 
+    left: 0; 
+    height: 25%;
+    width: 100%;
+    padding-top: 6px;
+    text-align: center;
+    background-color:rgba(212, 210, 210, 0.521);
+    color: #59189af5;
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+/* PHONES SLIDER */
+.home-container-phones {
+    grid-area: h;
+    padding-bottom: 3rem;
+    /* border: 1px solid red; */
+}
+.home-container-phones-slider-inner {
+    /* border: 3px solid yellow; */
+    text-align: center;
+}
+/* .home-container-phones-slider-inner img{
+    border: 2px solid violet;
+} */
+.phones-slider-inner-info {
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: center;   
+}
+.price {
+    font-weight: 900;
+    font-size: larger;
+    font-style: italic;
+}
+.btn-vezi-toate-container {
+    margin: 0 auto;
+    color: #59189af5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #59189af5;
+    border-radius: 10px;
+    width: 45%;
+    height: 40px;
+}
+
+
+
+
+
