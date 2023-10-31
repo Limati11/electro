@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import './header.scss';
 import { Link, NavLink } from "react-router-dom";
-import { BiMenu, BiUserCircle } from 'react-icons/bi';
+// icons
+import './header.scss';
 import { AiOutlineCloseCircle, AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai';
+import { BiMenu, BiUserCircle } from 'react-icons/bi';
+import { BsPhone, BsTablet, BsLaptop, BsDisplay } from 'react-icons/bs';
 import { TfiHeadphoneAlt } from 'react-icons/tfi';
-import { FiTablet } from 'react-icons/fi';
-import { IoWatchOutline } from 'react-icons/io5';
-import { BsPhone, BsLaptop, BsHeadphones } from 'react-icons/bs';
+import { PiHeadphonesLight } from 'react-icons/pi'
+import { IoWatchOutline } from 'react-icons/io5'
+
+
 
 
 
@@ -64,46 +67,53 @@ export default function Header() {
                             <NavLink to="/Telefoane" 
                                 style={({ isActive }) => isActive ? activeStyles : null}
                                 onClick={closeBurgerMenu}>
+                                <BsPhone className='gadget-icons' />
                                 <p>Telefoane</p>
-                                <BsPhone />
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to="/Laptopuri" 
                                 style={({ isActive }) => isActive ? activeStyles : null}
                                 onClick={closeBurgerMenu}>
+                                <BsLaptop className='gadget-icons'/>
                                 <p>Laptopuri</p>
-                                <BsLaptop />
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to="/Gadgeturi" 
                                 style={({ isActive }) => isActive ? activeStyles : null}
                                 onClick={closeBurgerMenu}>
+                                <IoWatchOutline className='gadget-icons'/>
                                 <p>Gadgeturi</p>
-                                <IoWatchOutline />
                             </NavLink>
                         </li>
                         <li>
                         <NavLink to="/Tablete" 
                             style={({ isActive }) => isActive ? activeStyles : null}
                             onClick={closeBurgerMenu}>
+                            <BsTablet className='gadget-icons'/>
                             <p>Tablete</p>
-                            <FiTablet />
                         </NavLink>
                         </li>
                         <li>
                             <NavLink to="/Accesorii" 
                                 style={({ isActive }) => isActive ? activeStyles : null}
                                 onClick={closeBurgerMenu}>
+                                <PiHeadphonesLight className='gadget-icons'/>
                                 <p>Accesorii</p>
-                                <BsHeadphones />
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/Televizoare" 
+                                style={({ isActive }) => isActive ? activeStyles : null}
+                                onClick={closeBurgerMenu}>
+                                <BsDisplay className='gadget-icons'/>
+                                <p>Televizoare</p>
                             </NavLink>
                         </li>
                     </ul>
                 </nav>
             </div>
-
 
             <div className={`burger-container ${isBurgerMenuOpen ? 'open' : ''}`}>
                 <div className='burger-container-close-button' onClick={closeBurgerMenu}>

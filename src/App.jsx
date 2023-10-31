@@ -14,6 +14,7 @@ import Telefoane from './pages/Telefoane';
 import Magazine from './pages/Magazine';
 import Call from './pages/Call';
 import Tradein from "./pages/Tradein"
+import Televizoare from "./pages/Televizoare"
 
 
 
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="telefoane" element={<Telefoane />} />
           <Route path="magazine" element={<Magazine />} />
           <Route path="call" element={<Call />} />
+          <Route path="televizoare" element={<Televizoare />} />
           <Route path="tradein" element={<Tradein />} />
         </Route>
       </Routes>

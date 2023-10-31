@@ -39,14 +39,14 @@ header {
       align-items: cente;      
       justify-content: center;
     }
-     h2 {
-      // border: 1px solid blue;
-      color: var(--prim-color);
-      font-family: var(--font-logo);
-      font-size: 1.8em;
-      margin: 0;
-      padding-bottom: 2px;   // logo text is in the center
-    }
+      h2 {
+        // border: 1px solid blue;
+        color: var(--prim-color);
+        font-family: var(--font-logo);
+        font-size: 1.8em;
+        margin: 0;
+        padding-bottom: 2px;   // logo text is in the center
+      }
 
     .header-middle-icons {
       // border: 1px solid blue;
@@ -57,49 +57,57 @@ header {
       padding-top: 3px; // text is in the center
       gap: 0.9em;
       cursor: pointer;
-    }
-    .header-icon {
-      color: black;
-      height: 1.6rem;
-      width: 1.6rem;
-    }
-    .header-icon-burger {
-      color: black;
-    }
+      }
+      .header-icon {
+        color: black;
+        height: 1.6rem;
+        width: 1.6rem;
+      }
+      .header-icon-burger {
+        color: black;
+      }
   }
 
   /* HEADER DOWN */
   .header-down {
-    border: 1px solid red;
+    // border: 1px solid red;
     background-color: var(--third-color);
-    ul {
-      border: 1px solid blue;
-      display: flex;
-    }
 
     .horizontal-scroll {
       overflow-x: auto;
       white-space: nowrap;
       display: flex;
-      
-  }
-  
-  .horizontal-scroll ul {
-      list-style: none;
-      display: flex;
-      padding: 0;
-      margin: 0;
-  }
-  
-  .horizontal-scroll li {
-      padding: 0 10px; 
-  }
-  
-  .horizontal-scroll a {
-      text-decoration: none;
-      color: #000; 
-  }
-  
+    }
+    
+      .horizontal-scroll ul {
+          // border: 1px solid blue;
+          display: flex;
+          padding: 0;
+          margin: 0;
+      }
+    
+      .horizontal-scroll li {
+        // border: 1px solid green;
+        padding: 1em;
+        
+      }
+        a {
+          // border: 1px solid red;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+          p {
+            margin-bottom: 0;
+            // border: 1px solid pink;
+          }
+          .gadget-icons {
+            // border: 1px solid orange;
+            height: 2.1rem;
+            width: 2.1rem;
+          }
+
   }
 
   /* BURGER MENU STYLE */
