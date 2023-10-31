@@ -1,3 +1,11 @@
+:root {
+    --prim-color: #14213d; 
+    --second-color: #fca311; 
+    --third-color: #e5e5e5; 
+    --font-logo: 'Michroma', sans-serif;;
+    --font-site: 'Roboto', sans-serif; 
+  }
+
 * {
     box-sizing: border-box;
 }
@@ -6,17 +14,18 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background-color: #fff7ed;
-    font-family: "Pragmatica Book", Helvetica Neue, Arial;
+    background-color: var(--third-color);
+    font-family: var(--font-site);   
 }
 
 ul, li {
     list-style: none;
     list-style-type: none;
+    
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 

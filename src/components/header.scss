@@ -1,0 +1,133 @@
+/* Header Styles */
+header {
+  background-color: rgba(255, 0, 0, 0.288);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  /* HEADER UP */
+  .header-up {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--third-color);
+    display: flex;
+    padding: 0.4em 1em;
+    align-items: center;
+    justify-content: end;
+
+    span {
+      // border: 1px solid yellow;
+      margin-left: 0.7em;
+    }
+  }
+
+  /* HEADER MIDDLE */
+  .header-middle {
+    // border: 1px solid red;
+    background-color: white;
+    z-index: 1;
+    position: relative;
+    height: 3.8rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.8em;
+    gap: 1em;
+
+    .header-middle-site-logo {
+      // border: 1px solid green;
+      // margin: auto 0;
+      display: flex;
+      align-items: cente;      
+      justify-content: center;
+    }
+     h2 {
+      // border: 1px solid blue;
+      color: var(--prim-color);
+      font-family: var(--font-logo);
+      font-size: 1.8em;
+      margin: 0;
+      padding-bottom: 2px;   // logo text is in the center
+    }
+
+    .header-middle-icons {
+      // border: 1px solid blue;
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      padding-left: auto;
+      padding-top: 3px; // text is in the center
+      gap: 0.9em;
+      cursor: pointer;
+    }
+    .header-icon {
+      color: black;
+      height: 1.6rem;
+      width: 1.6rem;
+    }
+    .header-icon-burger {
+      color: black;
+    }
+  }
+
+  /* HEADER DOWN */
+  .header-down {
+    border: 1px solid red;
+    background-color: var(--third-color);
+    ul {
+      border: 1px solid blue;
+      display: flex;
+    }
+
+    .horizontal-scroll {
+      overflow-x: auto;
+      white-space: nowrap;
+      display: flex;
+      
+  }
+  
+  .horizontal-scroll ul {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+  }
+  
+  .horizontal-scroll li {
+      padding: 0 10px; 
+  }
+  
+  .horizontal-scroll a {
+      text-decoration: none;
+      color: #000; 
+  }
+  
+  }
+
+  /* BURGER MENU STYLE */
+  .burger-container {
+    display: none;
+    z-index: 2;
+    background-color: var(--prim-color);
+    width: 80vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &.open {
+      display: block;
+
+      .burger-container-close-button {
+        position: absolute;
+        right: 0.9rem;
+        top: 1.1rem;
+        cursor: pointer;
+      }
+
+      .burger-container-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
