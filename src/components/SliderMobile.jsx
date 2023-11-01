@@ -19,22 +19,22 @@ export default function SliderMobile() {
   return (
     <Slider {...settings}>
       <div>
-        <img src="src/public/assets/slider_mobile/0-Credit-750x680-RO-750x680.webp" alt="Image 1" />
+        <img src="public/home-slider-1.webp" alt="Image 1" />
       </div>
       <div>
-        <img src="src/public/assets/slider_mobile/1eShop_750x680_TabFe_ro-750x680.webp" alt="Image 2" />
+        <img src="public/home-slider-2.webp" alt="Image 2" />
       </div>
       <div>
-        <img src="src/public/assets/slider_mobile/3Xiaomi-12-750x680-RO-750x680.webp" alt="Image 3" />
+        <img src="public/home-slider-3.webp" alt="Image 3" />
       </div>
       <div>
-        <img src="src/public/assets/slider_mobile/eShop_Cool-Black_750x680_ro-750x680.webp" alt="Image 4" />
+        <img src="public/home-slider-4.webp" alt="Image 4" />
       </div>
       <div>
-        <img src="src/public/assets/slider_mobile/eShop-iPhone_14_Pro-750x680_ro-750x680.webp" alt="Image 5" />
+        <img src="public/home-slider-5.webp" alt="Image 5" />
       </div>
       <div>
-        <img src="src/public/assets/slider_mobile/eShop-Reno10-750x680-RO-750x680.webp" alt="Image 6" />
+        <img src="public/home-slider-6.webp" alt="Image 6" />
       </div>
     </Slider>
   );

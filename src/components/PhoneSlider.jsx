@@ -12,7 +12,7 @@ const phones = [
     power: '8/256GB ',
     color: 'Black',
     price: '20000',
-    imageUrl: 'src/public/assets/phones/iphone.jpg',
+    imageUrl: 'public/home-slider-phones-iphone.jpg',
   },
   {
     company: 'Sapmsung ',
@@ -20,7 +20,7 @@ const phones = [
     power: '4/120GB ',
     color: 'Black',
     price: '10000',
-    imageUrl: 'src/public/assets/phones/samsung.webp',
+    imageUrl: 'public/home-slider-phones-samsung.webp',
   },
   {
     company: 'Oppo ',
@@ -28,7 +28,7 @@ const phones = [
     power: '4/120GB ',
     color: 'White',
     price: '10000',
-    imageUrl: 'src/public/assets/phones/oppo.webp',
+    imageUrl: 'public/home-slider-phones-oppo.webp',
   },
   {
     company: 'Xiaomi ',
@@ -36,7 +36,7 @@ const phones = [
     power: '6/250GB ',
     color: 'Red',
     price: '15000',
-    imageUrl: 'src/public/assets/phones/xiaomi.webp',
+    imageUrl: 'public/home-slider-phones-xiaomi.webp',
   },
   {
     company: 'OnePlus',
@@ -44,7 +44,7 @@ const phones = [
     power: '6/250GB',
     color: 'Black',
     price: '18000',
-    imageUrl: 'src/public/assets/phones/oneplus.webp',
+    imageUrl: 'public\home-slider-phones-oneplus.webp',
   },
 ];
 
