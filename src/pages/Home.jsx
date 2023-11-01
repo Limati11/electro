@@ -15,15 +15,14 @@ export default function Home() {
             
             <div className="container home-container-tradein">
                 <Link className="tradein-image" to="/tradein" >
-                    <img src="src/assets/tradein/Mosaic-Trade-In-RO-1140x1040.jpg" alt=""></img>
+                    <img src="src/public/assets/home-tradein/Mosaic-Trade-In-RO-1140x1040.jpg" alt=""></img>
                 </Link>
             </div>
-
             <div className="container home-container-products">
                 <div className="up">
                     <Link className="casti-link" to="/gadgeturi">
                         <div className="casti">
-                            <img src="src/assets/products/Casti_fara_fir_mosaic-new-1140x490.webp" alt=""></img>
+                            <img src="src/public/assets/products/Casti_fara_fir_mosaic-new-1140x490.webp" alt=""></img>
                             <h3>Căști Bluetooth</h3>
                         </div>
                     </Link>
@@ -31,13 +30,13 @@ export default function Home() {
                 <div className="down">
                     <Link className="watch-link" to="/gadgeturi">
                         <div className="watch">
-                            <img src="src/assets/products/ceasuri-540x490.webp" alt=""></img>
+                            <img src="src/public/assets/products/ceasuri-540x490.webp" alt=""></img>
                             <h3>Smartwatch-uri</h3>
                         </div>
                     </Link>
                     <Link className="boxe-link" to="/gadgeturi">
                         <div className="boxe">
-                            <img src="src/assets/products/Apple-homepod-mini-540x490.jpg" alt=""></img>
+                            <img src="src/public/assets/products/Apple-homepod-mini-540x490.jpg" alt=""></img>
                             <h3>Boxe</h3>
                         </div>
                     </Link>
