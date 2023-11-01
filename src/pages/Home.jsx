@@ -15,14 +15,14 @@ export default function Home() {
             
             <div className="container home-container-tradein">
                 <Link className="tradein-image" to="/tradein" >
-                    <img src="public/home-tradein.jpg" alt=""></img>
+                    <img src="/home-tradein.jpg" alt=""></img>
                 </Link>
             </div>
             <div className="container home-container-products">
                 <div className="up">
                     <Link className="casti-link" to="/gadgeturi">
                         <div className="casti">
-                            <img src="public/home-casti.webp" alt=""></img>
+                            <img src="/home-casti.webp" alt=""></img>
                             <h3>Căști Bluetooth</h3>
                         </div>
                     </Link>
@@ -30,13 +30,13 @@ export default function Home() {
                 <div className="down">
                     <Link className="watch-link" to="/gadgeturi">
                         <div className="watch">
-                            <img src="public/home-ceasuri.webp" alt=""></img>
+                            <img src="/home-ceasuri.webp" alt=""></img>
                             <h3>Smartwatch-uri</h3>
                         </div>
                     </Link>
                     <Link className="boxe-link" to="/gadgeturi">
                         <div className="boxe">
-                            <img src="public/home-boxe.jpg" alt=""></img>
+                            <img src="/home-boxe.jpg" alt=""></img>
                             <h3>Boxe</h3>
                         </div>
                     </Link>
