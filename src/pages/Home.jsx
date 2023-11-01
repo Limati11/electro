@@ -15,7 +15,7 @@ export default function Home() {
             
             <div className="container home-container-tradein">
                 <Link className="tradein-image" to="/tradein" >
-                    <img src="/home-tradein.jpg" alt=""></img>
+                    <img src="/src/tradein/home-tradein.jpg" alt=""></img>
                 </Link>
             </div>
             <div className="container home-container-products">
