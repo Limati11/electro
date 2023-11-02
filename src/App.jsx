@@ -7,6 +7,7 @@ import Apple from './pages/Apple';
 import Conectare from './pages/Conectare';
 import Exclusiv from './pages/Exclusiv';
 import Gadgeturi from './pages/Gadgeturi';
+import Gaming from './pages/Gaming';
 import Home from './pages/Home';
 import Laptopuri from './pages/Laptopuri';
 import Tablete from './pages/Tablete';
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="telefoane" element={<Telefoane />} />
           <Route path="magazine" element={<Magazine />} />
           <Route path="call" element={<Call />} />
+          <Route path="gaming" element={<Gaming />} />
           <Route path="televizoare" element={<Televizoare />} />
           <Route path="tradein" element={<Tradein />} />
         </Route>

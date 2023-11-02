@@ -1,0 +1,183 @@
+.home-container {
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  /* grid-template-rows: repeat(5, 1fr); */
+  grid-template-areas: 
+      "s s s s s s s s s s s s"
+      "p p p p p p p p p p p p"
+      "ti ti ti ti ti ti ti ti ti ti ti ti"
+      "g g g g g g g g g g g g"
+      "ph ph ph ph ph ph ph ph ph ph ph ph"
+      "i i i i i i i i i i i i";
+  grid-row-gap: 3rem;
+
+
+  
+  // CONTAINER
+  .container {
+    width: 90%;
+    max-height: 100%;
+    margin: 0 auto;
+    border-radius: 1rem;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+  }
+  .container 
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  // SLIDER
+  .home-container-slider {
+    grid-area: s;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+
+  // PRODUCTS
+  .home-container-products {
+    grid-area: p;
+    /* border: 1px solid red; */
+
+    img {
+      border-radius: 10px;
+    }
+
+    .down {
+      display: flex;
+      padding-top: 1rem ;
+      gap: 1rem;
+    }
+    .casti, .watch, .boxe {
+      width: 100%;
+      position: relative;
+    }
+    .casti>h3, .watch>h3, .boxe>h3 {
+      position: absolute;
+      bottom: -1rem; 
+      left: 0; 
+      height: 25%;
+      width: 100%;
+      padding-top: 6px;
+      text-align: center;
+      background-color:rgba(212, 210, 210, 0.521);
+      color: var(--prim-color);
+      border-radius: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+
+  // TRADEIN
+  .home-container-tradein {
+    grid-area: ti;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+    }
+  }
+
+  // GAMING
+  .home-container-gaming {
+    grid-area: g;
+    // border: 1px solid red;
+    width: 100%;
+    display: block;
+
+    .gaming-div {
+      // border: 1px solid blue;
+
+      img {
+      }
+    }
+  }
+
+
+  // PHONES SLIDER
+  .home-container-phones {
+    grid-area: ph;
+    padding-bottom: 3rem;
+    /* border: 1px solid red; */
+
+    .home-container-phones-slider-inner {
+      /* border: 3px solid yellow; */
+      text-align: center;
+    }
+    /* .home-container-phones-slider-inner img{
+      border: 2px solid violet;
+    } */
+    .phones-slider-inner-info {
+      height: 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: center;
+      justify-content: center;   
+
+      .price {
+        font-weight: 900;
+        font-size: larger;
+        font-style: italic;
+      }
+    }
+    
+    .btn-vezi-toate-container {
+      margin: 0 auto;
+      color: var(--prim-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #59189af5;
+      border-radius: 10px;
+      width: 45%;
+      height: 40px;
+    }
+  }
+  
+
+  .home-container-info {
+    // border: 1px solid red;
+    grid-area: i;
+    background-color: var(--third-color);
+    display: flex;
+
+    .home-container-info-inner {
+      // border: 1px solid blue;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 5px 8px;
+      width: 50vw;
+
+      .info-icons {
+        color: var(--prim-color);
+        width: 30px;
+        height: 30px;
+      }
+     
+    }
+
+  }
+
+
+
+
+}
+
+

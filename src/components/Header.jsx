@@ -6,8 +6,9 @@ import { AiOutlineCloseCircle, AiOutlineSearch, AiOutlineShoppingCart } from 're
 import { BiMenu, BiUserCircle } from 'react-icons/bi';
 import { BsPhone, BsTablet, BsLaptop, BsDisplay } from 'react-icons/bs';
 import { TfiHeadphoneAlt } from 'react-icons/tfi';
-import { PiHeadphonesLight } from 'react-icons/pi'
-import { IoWatchOutline } from 'react-icons/io5'
+import { PiHeadphonesLight } from 'react-icons/pi';
+import { IoWatchOutline, IoCallOutline, IoLocationOutline } from 'react-icons/io5'
+
 
 
 
@@ -119,31 +120,44 @@ export default function Header() {
                 <div className='burger-container-close-button' onClick={closeBurgerMenu}>
                     <AiOutlineCloseCircle style={{ width: '1.7rem', height: '1.7rem' }} />
                 </div>
-                <NavLink to="/Magazine" 
-                    style={({ isActive }) => isActive ? activeStyles : null}
-                    onClick={closeBurgerMenu}>
-                    Magazine
-                </NavLink>
-                <NavLink to="/Call" 
-                    style={({ isActive }) => isActive ? activeStyles : null}
-                    onClick={closeBurgerMenu}>
-                    Sună
-                </NavLink>
-                <NavLink to="/Exclusiv" 
-                    style={({ isActive }) => isActive ? activeStyles : null}
-                    onClick={closeBurgerMenu}>
-                    Exclusiv
-                </NavLink>
-                <NavLink to="/Conectare" 
-                    style={({ isActive }) => isActive ? activeStyles : null}
-                    onClick={closeBurgerMenu}>
-                    Conectare
-                </NavLink>
-                <NavLink to="/Tradein" 
-                    style={({ isActive }) => isActive ? activeStyles : null}
-                    onClick={closeBurgerMenu}>
-                    Tradein
-                </NavLink>
+
+                <div className="burger-container-up">
+                        <NavLink to="/Call" onClick={closeBurgerMenu}>
+                            <div className="burger-icons-div">
+                                <IoCallOutline className='burger-icons'/>
+                                Sună
+                            </div>
+                        </NavLink>
+                        <NavLink to="/Magazine" onClick={closeBurgerMenu}>
+                            <div className="burger-icons-div">
+                                <IoLocationOutline className='burger-icons'/>
+                                Magazine
+                            </div>
+                        </NavLink>
+                    </div>
+
+                <div className="burger-container-down">
+                        <NavLink to="/Exclusiv" onClick={closeBurgerMenu}>
+                            <div className="burger-list">
+                                Exclusiv
+                            </div>
+                        </NavLink>
+                        <NavLink to="/Gaming" onClick={closeBurgerMenu}>
+                            <div className="burger-list">
+                                For Gaming
+                            </div>
+                        </NavLink>
+                        <NavLink to="/Conectare" onClick={closeBurgerMenu}>
+                            <div className="burger-list">
+                                Conectare
+                            </div>
+                        </NavLink>
+                        <NavLink to="/Tradein" onClick={closeBurgerMenu}>
+                            <div className="burger-list">
+                                Tradein
+                            </div>
+                        </NavLink>
+                </div>
             </div> 
           
         </header>

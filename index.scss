@@ -1,6 +1,6 @@
 :root {
-    --prim-color: #14213d; 
-    --second-color: #fca311; 
+    --prim-color: #8d0acf; 
+    --second-color: #f308a5; 
     --third-color: #e5e5e5; 
     --font-logo: 'Michroma', sans-serif;;
     --font-site: 'Roboto', sans-serif; 
@@ -16,16 +16,18 @@ body {
     padding: 0;
     background-color: var(--third-color);
     font-family: var(--font-site);   
-}
 
-ul, li {
-    list-style: none;
-    list-style-type: none;
     
+    ul, li {
+        list-style: none;
+        list-style-type: none;
+        
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
 

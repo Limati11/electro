@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import "/src/pages/home.css"
+import "/src/pages/home.scss"
 
 const phones = [
   {
@@ -12,7 +12,7 @@ const phones = [
     power: '8/256GB ',
     color: 'Black',
     price: '20000',
-    imageUrl: '/home-slider-phones-iphone.jpg',
+    imageUrl: '/assets/home-phone-slider/home-slider-phones-iphone.jpg',
   },
   {
     company: 'Sapmsung ',
@@ -20,7 +20,7 @@ const phones = [
     power: '4/120GB ',
     color: 'Black',
     price: '10000',
-    imageUrl: '/home-slider-phones-samsung.webp',
+    imageUrl: '/assets/home-phone-slider/home-slider-phones-samsung.webp',
   },
   {
     company: 'Oppo ',
@@ -28,7 +28,7 @@ const phones = [
     power: '4/120GB ',
     color: 'White',
     price: '10000',
-    imageUrl: '/home-slider-phones-oppo.webp',
+    imageUrl: '/assets/home-phone-slider/home-slider-phones-oppo.webp',
   },
   {
     company: 'Xiaomi ',
@@ -36,7 +36,7 @@ const phones = [
     power: '6/250GB ',
     color: 'Red',
     price: '15000',
-    imageUrl: '/home-slider-phones-xiaomi.webp',
+    imageUrl: '/assets/home-phone-slider/home-slider-phones-xiaomi.webp',
   },
   {
     company: 'OnePlus',
@@ -44,7 +44,7 @@ const phones = [
     power: '6/250GB',
     color: 'Black',
     price: '18000',
-    imageUrl: '/home-slider-phones-oneplus.webp',
+    imageUrl: '/assets/home-phone-slider/home-slider-phones-oneplus.webp',
   },
 ];
 

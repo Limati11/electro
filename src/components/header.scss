@@ -7,6 +7,7 @@ header {
 
   /* HEADER UP */
   .header-up {
+    // border: 1px solid yellow;
     font-family: 'Roboto', sans-serif;
     background-color: var(--third-color);
     display: flex;
@@ -17,6 +18,9 @@ header {
     span {
       // border: 1px solid yellow;
       margin-left: 0.7em;
+    }
+    a {
+      color: var(--second-color);
     }
   }
 
@@ -126,16 +130,52 @@ header {
 
       .burger-container-close-button {
         position: absolute;
+        color: var(--third-color);
         right: 0.9rem;
-        top: 1.1rem;
+        top: 0.9rem;
         cursor: pointer;
       }
 
-      .burger-container-inner {
+      .burger-container-up {
+        // border: 1px solid yellow;
+        padding: 5px 0;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        column-gap: 3.5em;
+        flex-direction: row;
+        margin-top: 3.5em;
+        font-size: 1.1rem;
+        border-bottom: 1px solid white;
+        border-top: 1px solid white;
       }
+
+        .burger-icons-div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+        }
+        .burger-icons {
+          width: 25px;
+          height: 25px;
+        }
+
+      .burger-container-down {
+        // border: 1px solid red;
+        display: flex;
+        padding-top: 1em;
+        padding-left: 0.5em;
+        flex-direction: column;
+        font-size: 2rem;
+        font-weight: bold;
+        row-gap: 1em;
+      }
+        a {
+          color: white;
+        }
+
     }
   }
 }

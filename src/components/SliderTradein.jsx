@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 export default function SliderMobile() {
   const settings = {
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3500,
     infinite: true,
     dots: false,
     arrows: false,
@@ -19,22 +19,10 @@ export default function SliderMobile() {
   return (
     <Slider {...settings}>
       <div>
-        <img src="/home-slider-1.webp" alt="Image 1" />
+        <img src="/assets/home-tradein/home-tradein-iphones.jpg" alt="Image 1" />
       </div>
       <div>
-        <img src="/home-slider-2.webp" alt="Image 2" />
-      </div>
-      <div>
-        <img src="/home-slider-3.webp" alt="Image 3" />
-      </div>
-      <div>
-        <img src="/home-slider-4.webp" alt="Image 4" />
-      </div>
-      <div>
-        <img src="/home-slider-5.webp" alt="Image 5" />
-      </div>
-      <div>
-        <img src="/home-slider-6.webp" alt="Image 6" />
+        <img src="/assets/home-tradein/home-tradein.jpg" alt="Image 2" />
       </div>
     </Slider>
   );
