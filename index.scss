@@ -14,7 +14,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--third-color);
+    background-color: white;
     font-family: var(--font-site);   
 
     
@@ -30,4 +30,23 @@ body {
     }
 }
 
+.container {
+    width: 90%;
+    max-height: 100%;
+    margin: 0 auto;
+    border-radius: 1rem;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+  }
+  .container 
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 

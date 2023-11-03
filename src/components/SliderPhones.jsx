@@ -1,54 +1,40 @@
 import React from 'react';
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import "/src/pages/home.scss"
 
-const phones = [
-  {
-    company: 'Apple ',
-    name: 'Iphone',
-    power: '8/256GB ',
-    color: 'Black',
-    price: '20000',
-    imageUrl: '/assets/home-phone-slider/home-slider-phones-iphone.jpg',
-  },
-  {
-    company: 'Sapmsung ',
-    name: 'A',
-    power: '4/120GB ',
-    color: 'Black',
-    price: '10000',
-    imageUrl: '/assets/home-phone-slider/home-slider-phones-samsung.webp',
-  },
-  {
-    company: 'Oppo ',
-    name: 'S',
-    power: '4/120GB ',
-    color: 'White',
-    price: '10000',
-    imageUrl: '/assets/home-phone-slider/home-slider-phones-oppo.webp',
-  },
-  {
-    company: 'Xiaomi ',
-    name: 'B',
-    power: '6/250GB ',
-    color: 'Red',
-    price: '15000',
-    imageUrl: '/assets/home-phone-slider/home-slider-phones-xiaomi.webp',
-  },
-  {
-    company: 'OnePlus',
-    name: 'Nord',
-    power: '6/250GB',
-    color: 'Black',
-    price: '18000',
-    imageUrl: '/assets/home-phone-slider/home-slider-phones-oneplus.webp',
-  },
-];
+import { getPhones } from "./api.js";
+
+
+
 
 export default function PhonesSlider() {
+  // const [searchParams, setSearchParams] = useSearchParams()
+  const [phones, setPhones] = React.useState([])
+  const [loading, setLoading] = React.useState(false)
+  const [error, setError] = React.useState(null)
+
+  // const typeFilter = searchParams.get("type")
+
+  React.useEffect(() => {
+    async function loadPhones() {
+        setLoading(true)
+        try {
+            const data = await getPhones()
+            setPhones(data)
+        } catch (err) {
+            setError(err)
+        } finally {
+            setLoading(false)
+        }
+    }
+
+    loadPhones()
+  }, [])
+
+    
     const settings = {
         autoplay: true,
         autoplaySpeed: 4000,
@@ -68,11 +54,11 @@ export default function PhonesSlider() {
           <div key={index} className="home-container-phones-slider-inner">
             <img src={phone_data.imageUrl} alt={phone_data.name} />
             <h3>
-                {phone_data.company}
                 {phone_data.name}
+                {phone_data.model}
             </h3>
+              <span>{phone_data.memory}/{phone_data.ram}GB</span>
             <p className='phones-slider-inner-info'>
-              <span>{phone_data.power}</span>
               <span className='price'>{phone_data.price} lei</span>
             </p>
           </div>

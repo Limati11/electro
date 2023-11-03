@@ -13,29 +13,6 @@
   grid-row-gap: 3rem;
 
 
-  
-  // CONTAINER
-  .container {
-    width: 90%;
-    max-height: 100%;
-    margin: 0 auto;
-    border-radius: 1rem;
-
-    img {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-    }
-
-  }
-  .container 
-  .title-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-
   // SLIDER
   .home-container-slider {
     grid-area: s;
@@ -99,12 +76,9 @@
     width: 100%;
     display: block;
 
-    .gaming-div {
-      // border: 1px solid blue;
-
-      img {
-      }
-    }
+    // .gaming-div {
+    //   border: 1px solid blue;
+    // }
   }
 
 

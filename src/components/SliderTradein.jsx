@@ -19,7 +19,7 @@ export default function SliderMobile() {
   return (
     <Slider {...settings}>
       <div>
-        <img src="/assets/home-tradein/home-tradein-iphones.jpg" alt="Image 1" />
+        <img src="assets/home-tradein/home-tradein-iphones.jpg" alt="Image 1" />
       </div>
       <div>
         <img src="/assets/home-tradein/home-tradein.jpg" alt="Image 2" />

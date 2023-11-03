@@ -1,0 +1,137 @@
+.phones-container {
+    // border: 1px solid red;
+
+    .phones-filter-container {
+        padding: 1em 0;
+
+        .filter-up {
+            // border: 1px solid red;
+            color: white;
+            background-color: var(--prim-color);
+            padding: 0.6em 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.4rem;
+            border-top-right-radius: 0.6em;
+            border-top-left-radius: 0.6em;
+            cursor: pointer;
+
+            &:hover {
+                .chevron-up, .chevron-down {
+                    color: var(--second-color);
+                }
+            }
+            
+            p {
+                margin: 0;
+            }
+        }
+        
+        .filter-middle {
+            // border: 1px solid red ;
+            background-color: var(--third-color);
+            height: 3.5em;
+            border-bottom-left-radius: 0.6em;
+            border-bottom-right-radius: 0.6em;
+            display: flex;
+            padding: 5px;
+            
+
+            div {
+                // border: 1px solid blue ;
+                background-color: white;
+                color: rgba(156, 156, 156, 0.753);
+                width: 100%;
+                margin-top: 4px;
+                margin-bottom: 4px;
+                margin-left: 50%;
+                margin-right: 3%;
+                padding-right: 15px;
+                padding-left: 3px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 1.1em;
+                cursor: pointer;
+
+                &:hover {
+                    color: var(--second-color);
+                }
+
+                .chevrontwo-down, .chevrontwo-up {
+                    color: var(--prim-color);
+                }
+
+                p{
+                    margin-right: auto;
+                    padding-left: 10px;
+                }
+
+            }
+            
+        }
+
+        .filter-up-inner {
+            //    border: 1px solid red;
+            overflow: hidden;
+            transition: max-height 0.3s;
+            display: block; 
+            margin-top: -7px;
+            max-height: 0; 
+            background-color: var(--third-color);
+            border-bottom-left-radius: 0.6em;
+            border-bottom-right-radius: 0.6em;
+                
+            &.open {
+                max-height: 1000px;
+            }
+
+            .filter-up-inner-filterlist {
+                margin-top: 1em;
+                padding-top: 0.5em;
+                border-top: 1px solid var(--prim-color);
+            
+                div {
+                    //   border: 1px solid yellow;
+                    padding: 1em 1.2em;
+                    padding-right: 1.8em;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+
+                    &:hover {
+                    background-color: var(--prim-color);
+                    color: white;
+                    }
+                }
+            
+                .ph-up-fl-categorii {
+                    border: 1px solid blue;
+                    display: felx;
+                }
+
+                .ph-up-fl-categorii-inner {
+                    border: 1px solid red;
+                    overflow: hidden;
+                    transition: max-height 0.3s;
+                    margin-top: -7px;
+                    max-height: 0; 
+                    background-color: var(--third-color);
+
+                    &.open {
+                        max-height: 400px;
+                        background-color: white;
+                    }
+
+
+                }
+
+            
+            
+            }
+        }   
+          
+
+    }
+}
