@@ -8,6 +8,7 @@ import { HiMiniChevronDown, HiMiniChevronUp } from "react-icons/hi2";
 export default function Telefoane() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [phones, setPhones] = useState([]);
+  const [selectedFilters, setSelectedFilters] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -37,19 +38,17 @@ export default function Telefoane() {
     loadPhones();
   }, []);
 
-//   const typeFilter = searchParams.get("type");
+
   const priceFilter = parseFloat(searchParams.get("price"));
   const companyFilter = searchParams.get("company");
   const nameFilter = searchParams.get("name");
   const modelFilter = searchParams.get("model");
   const colorFilter = searchParams.get("color");
-  const memoryFilter = searchParams.get("memorie");
+  const memoryFilter = searchParams.get("memory");
   const ramFilter = searchParams.get("ram");
-
 
   const filteredPhones = phones.filter((phone) => {
     return (
-    //   (!typeFilter || phone.company.toLowerCase() === typeFilter) &&
       (!companyFilter || phone.company.toLowerCase() === companyFilter.toLowerCase()) && 
       (!colorFilter || phone.color.toLowerCase() === colorFilter) &&
       (!isNaN(priceFilter) ? phone.price <= priceFilter : true) &&
@@ -61,18 +60,24 @@ export default function Telefoane() {
   });
 
 
-  
 
   function toggleCategory(category, value) {
-    setSearchParams((prevParams) => {
-      if (value === null) {
-        prevParams.delete(category);
+    setSelectedFilters((prevSelectedFilters) => {
+      if (prevSelectedFilters[category] === value) {
+        const updatedFilters = { ...prevSelectedFilters };
+        delete updatedFilters[category];
+        return updatedFilters;
       } else {
-        prevParams.set(category, value);
+        return { ...prevSelectedFilters, [category]: value };
       }
-      return prevParams;
     });
-  }
+
+    setSearchParams((prevParams) => {
+        const updatedParams = new URLSearchParams(prevParams);
+        updatedParams.set(category, value);
+        return updatedParams;
+      });
+    }
   
 
 if (loading) {
@@ -82,6 +87,7 @@ if (loading) {
 if (error) {
     return <h1>There was an error: {error.message}</h1>
 }
+
 
   const handleFilterToggle = (filterName) => {
     switch (filterName) {
@@ -138,8 +144,8 @@ if (error) {
   return (
     <div className="container">
       <div className="phones-container">
-        <div className="phones-filter-container">
-          <div className="filter-up" onClick={() => handleFilterToggle("isFilterOpen")}>
+        <div className="filter-container">
+          <div className="filter-top" onClick={() => handleFilterToggle("isFilterOpen")}>
             <p>Filtre</p>
             {isFilterOpen ? (
               <IoChevronUp className="chevron-up" />
@@ -147,7 +153,7 @@ if (error) {
               <IoChevronDown className="chevron-down" />
             )}
           </div>
-          <div className="filter-middle" onClick={() => handleFilterToggle("isFilterSortareOpen")}>
+          <div className="filter-bottom" onClick={() => handleFilterToggle("isFilterSortareOpen")}>
             <div>
               <p>Sortare</p>
               {isFilterSortareOpen ? (
@@ -157,43 +163,109 @@ if (error) {
               )}
             </div>
           </div>
-          <div className={`filter-up-inner ${isFilterOpen ? "open" : ""}`}>
-            <div className="filter-up-inner-filterlist">
-              <div className="ph-fl-pret" onClick={() => handleFilterToggle("isFilterPretOpen")}>
-                Preț
-                {isFilterPretOpen ? <HiMiniChevronUp /> : <HiMiniChevronDown />}
-              </div>
-              <div className="ph-up-fl-categorii" onClick={() => handleFilterToggle("isFilterCategoriiOpen")}>
-                Categorii
-                {isFilterCategoriiOpen ? <HiMiniChevronUp /> : <HiMiniChevronDown />}
-              </div>
-              <div className={`ph-up-fl-categorii-inner ${isFilterCategoriiOpen ? "open" : ""}`}>
-                <div onClick={() => toggleCategory("company", "Apple")}>Apple</div>
-                <div onClick={() => toggleCategory("company", "Samsung")}>Samsung</div>
-                <div onClick={() => toggleCategory("company", "Oppo")}>Oppo</div>
-                <div onClick={() => toggleCategory("company", "Xiaomi")}>Xiaomi</div>
-                <div onClick={() => toggleCategory("company", "OnePlus")}>Xiaomi</div>
-              </div> 
-              <div className="ph-up-fl-producator" onClick={() => handleFilterToggle("isFilterProducatorOpen")}>
-                Producător
-                {isFilterProducatorOpen ? <HiMiniChevronUp /> : <HiMiniChevronDown />}
-              </div>
-              <div className="ph-up-fl-model" onClick={() => handleFilterToggle("isFilterModelOpen")}>
-                Model
-                {isFilterModelOpen ? <HiMiniChevronUp /> : <HiMiniChevronDown />}
-              </div>
-              <div className="ph-up-fl-culoare" onClick={() => handleFilterToggle("isFilterCuloareOpen")}>
-                Culoare
-                {isFilterCuloareOpen ? <HiMiniChevronUp /> : <HiMiniChevronDown />}
-              </div>
-              <div className="fe-memorie" onClick={() => handleFilterToggle("isFilterMemorieOpen")}>
-                Memorie internă (GB)
-                {isFilterMemorieOpen ? <HiMiniChevronUp /> : <HiMiniChevronDown />}
-              </div>
-              <div className="fe-ram" onClick={() => handleFilterToggle("isFilterRamOpen")}>
-                Memorie RAM (GB)
-                {isFilterRamOpen ? <HiMiniChevronUp /> : <HiMiniChevronDown />}
-              </div>
+          <div className={`filter-top-filters-container ${isFilterOpen ? "open" : ""}`}>
+            <div className="filter-top-filters">
+
+                <div className="top-filters-pret filters" onClick={() => handleFilterToggle("isFilterPretOpen")}>
+                    Preț
+                    {isFilterPretOpen ? <HiMiniChevronUp /> : <HiMiniChevronDown />}
+                </div>
+                    <div className={`top-filters-pret-subfilters ${isFilterPretOpen ? "open" : ""}`}>
+                    </div>
+                    
+                <div className="top-filters-producator filters" onClick={() => handleFilterToggle("isFilterProducatorOpen")}>
+                    Producător
+                    {isFilterProducatorOpen ? <HiMiniChevronUp /> : <HiMiniChevronDown />}
+                </div>
+                    <div className={`subfilters ${isFilterProducatorOpen ? "open" : ""}`}>
+                        <div    onClick={() => toggleCategory("company", "Apple")} 
+                                className={selectedFilters.company === "Apple" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    Apple
+                        </div>
+                        <div    onClick={() => toggleCategory("company", "Samsung")} 
+                                className={selectedFilters.company === "Samsung" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    Samsung
+                        </div>
+                        <div    onClick={() => toggleCategory("company", "Oppo")} 
+                                className={selectedFilters.company === "Oppo" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    Oppo
+                        </div>
+                        <div    onClick={() => toggleCategory("company", "Xiaomi")} 
+                                className={selectedFilters.company === "Xiaomi" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    Xiaomi
+                        </div>
+                        <div    onClick={() => toggleCategory("company", "OnePlus")} 
+                                className={selectedFilters.company === "OnePlus" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    OnePlus
+                        </div>
+                    </div> 
+
+
+                <div className="top-filters-culoare filters" onClick={() => handleFilterToggle("isFilterCuloareOpen")}>
+                    Culoare
+                    {isFilterCuloareOpen ? <HiMiniChevronUp /> : <HiMiniChevronDown />}
+                </div>
+                    <div className={`subfilters ${isFilterCuloareOpen ? "open" : ""}`}>
+                        <div    onClick={() => toggleCategory("color", "black")} 
+                                className={selectedFilters.color === "black" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    Black
+                        </div>
+                        <div    onClick={() => toggleCategory("color", "gray")} 
+                                className={selectedFilters.color === "gray" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    Gray
+                        </div>
+                        <div    onClick={() => toggleCategory("color", "blue")} 
+                                className={selectedFilters.color === "blue" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    Blue
+                        </div>
+                        <div    onClick={() => toggleCategory("color", "white")} 
+                                className={selectedFilters.color === "white" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    White
+                        </div>
+                    </div>
+
+                <div className="top-filters-memorie filters" onClick={() => handleFilterToggle("isFilterMemorieOpen")}>
+                    Memorie internă (GB)
+                    {isFilterMemorieOpen ? <HiMiniChevronUp /> : <HiMiniChevronDown />}
+                </div>
+                    <div className={`subfilters ${isFilterMemorieOpen ? "open" : ""}`}>
+                        <div    onClick={() => toggleCategory("memory", "125GB")} 
+                                className={selectedFilters.memory === "125GB" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    125GB
+                        </div>
+                        <div    onClick={() => toggleCategory("memory", "256GB")} 
+                                className={selectedFilters.memory === "256GB" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    256GB
+                        </div>
+                        <div    onClick={() => toggleCategory("memory", "512GB")} 
+                                className={selectedFilters.memory === "512GB" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    512GB
+                        </div>
+                        <div    onClick={() => toggleCategory("memory", "1TB")} 
+                                className={selectedFilters.memory === "1TB" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    1TB
+                        </div>
+                    </div>
+
+                <div className="top-filters-ram filters" onClick={() => handleFilterToggle("isFilterRamOpen")}>
+                     Memorie RAM (GB)
+                    {isFilterRamOpen ? <HiMiniChevronUp /> : <HiMiniChevronDown />}
+                </div>
+                    <div className={`subfilters ${isFilterRamOpen ? "open" : ""}`}>
+                        <div    onClick={() => toggleCategory("ram", "6GB")} 
+                                className={selectedFilters.ram === "6GB" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    6GB
+                        </div>
+                        <div    onClick={() => toggleCategory("ram", "8GB")} 
+                                className={selectedFilters.ram === "8GB" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    8GB
+                        </div>
+                        <div    onClick={() => toggleCategory("ram", "12GB")} 
+                                className={selectedFilters.ram === "12GB" ? "selected-subfilter" : "unselected-subfilter"}>
+                                    12GB
+                        </div>
+                    </div>
+
             </div>
             <div className="filter-list-buttons">
               <button>ANULARE FILTRE</button>
@@ -203,6 +275,7 @@ if (error) {
         </div>
         <div className="phone-list">{phoneElements}</div>
       </div>
-    </div>
+    </div> 
+
   );
 }

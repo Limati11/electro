@@ -1,10 +1,10 @@
 .phones-container {
     // border: 1px solid red;
 
-    .phones-filter-container {
+    .filter-container {
         padding: 1em 0;
 
-        .filter-up {
+        .filter-top {
             // border: 1px solid red;
             color: white;
             background-color: var(--prim-color);
@@ -28,7 +28,7 @@
             }
         }
         
-        .filter-middle {
+        .filter-bottom {
             // border: 1px solid red ;
             background-color: var(--third-color);
             height: 3.5em;
@@ -72,10 +72,10 @@
             
         }
 
-        .filter-up-inner {
-            //    border: 1px solid red;
+        .filter-top-filters-container {
+            // border: 1px solid red;
             overflow: hidden;
-            transition: max-height 0.3s;
+            transition: max-height 0.4s;
             display: block; 
             margin-top: -7px;
             max-height: 0; 
@@ -87,13 +87,14 @@
                 max-height: 1000px;
             }
 
-            .filter-up-inner-filterlist {
+            .filter-top-filters {
+                // border: 1px solid blue;
                 margin-top: 1em;
                 padding-top: 0.5em;
                 border-top: 1px solid var(--prim-color);
             
-                div {
-                    //   border: 1px solid yellow;
+                .filters {
+                    border: 1px solid yellow;
                     padding: 1em 1.2em;
                     padding-right: 1.8em;
                     cursor: pointer;
@@ -104,34 +105,38 @@
                     background-color: var(--prim-color);
                     color: white;
                     }
-                }
-            
-                .ph-up-fl-categorii {
-                    border: 1px solid blue;
-                    display: felx;
-                }
+                } 
 
-                .ph-up-fl-categorii-inner {
-                    border: 1px solid red;
+                .subfilters {
+                    border: 1px solid blue;
                     overflow: hidden;
-                    transition: max-height 0.3s;
+                    transition: max-height 0.4s;
                     margin-top: -7px;
                     max-height: 0; 
                     background-color: var(--third-color);
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0.7em 1.5em;
+                    width: 100%;
 
                     &.open {
                         max-height: 400px;
-                        background-color: white;
+                        width: 100%;
+                        color: black;
                     }
 
+                    .unselected-subfilter {
+                        padding: 0.4em;
+                        cursor: pointer;
+                    }
+                    .selected-subfilter {
+                        border: 1px solid violet;
+                    }
+                } 
 
-                }
 
-            
-            
-            }
-        }   
+            }   
           
-
-    }
+        }
+    }   
 }
