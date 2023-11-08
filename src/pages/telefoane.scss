@@ -188,6 +188,10 @@
                         padding: 0;
                         margin: 0;
                     }
+
+                    &.ram {
+                        border-bottom: 1px solid var(--prim-color);
+                    }
                 } 
 
                 .subfilters {

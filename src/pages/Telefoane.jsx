@@ -343,7 +343,7 @@ export default function Telefoane() {
                         </div>
                     </div>
 
-                <div className="top-filters-ram filters" onClick={() => toggleFilterOpen("isFilterRamOpen")}>
+                <div className="top-filters-ram filters ram" onClick={() => toggleFilterOpen("isFilterRamOpen")}>
                      <h4>Memorie RAM (GB)</h4>
                     {filterOpenStates.isFilterRamOpen ? <HiMiniChevronUp /> : <HiMiniChevronDown />}
                 </div>
