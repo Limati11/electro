@@ -256,7 +256,7 @@ export default function Telefoane() {
                                 onChange={(e) => handleFilterChange("minPrice", e.target.value)}
                                 />
                             </div>
-                            <div className="sortare-pret-inner">
+                            <div className="sortare-pret-inner second">
                                 <label>Preț maxim:</label>
                                 <input
                                 type="number"
