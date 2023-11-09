@@ -1,0 +1,57 @@
+.home-container-phones {
+    grid-area: ph;
+    padding-bottom: 3rem;
+    //  border: 1px solid red; 
+
+    .home-container-phones-slider-inner {
+      //  border: 3px solid yellow; 
+      text-align: center;
+    }
+    /* .home-container-phones-slider-inner img{
+      border: 2px solid violet;
+    } */
+    .product-info {
+        // border: 1px solid red;
+        // background-color: var(--third-color);
+        padding: 0.5em 0 0;
+        margin: 1em 0 2em 0;
+        border-bottom: 2px solid var(--third-color);
+        // border-radius: 0.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 80%;
+        }
+        h3{
+            margin-bottom:  -0.8em;
+        }
+        h4 {
+            margin-bottom: -0.4em;
+        }
+
+        &:hover {
+            border-bottom: 2px solid var(--prim-color);
+        }
+    }
+    
+    .btn-vezi-toate-container {
+      margin: 0 auto;
+      color: var(--prim-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid var(--prim-color);
+      border-radius: 10px;
+      width: 45%;
+      height: 40px;
+
+      &:hover {
+        color: white;
+        background-color: var(--second-color);
+        border: 1.5px solid var(--second-color);
+      }
+    }
+  }

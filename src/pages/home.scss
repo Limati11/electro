@@ -69,6 +69,7 @@
     }
   }
 
+  
   // GAMING
   .home-container-gaming {
     grid-area: g;
@@ -79,48 +80,6 @@
     // .gaming-div {
     //   border: 1px solid blue;
     // }
-  }
-
-
-  // PHONES SLIDER
-  .home-container-phones {
-    grid-area: ph;
-    padding-bottom: 3rem;
-    /* border: 1px solid red; */
-
-    .home-container-phones-slider-inner {
-      /* border: 3px solid yellow; */
-      text-align: center;
-    }
-    /* .home-container-phones-slider-inner img{
-      border: 2px solid violet;
-    } */
-    .phones-slider-inner-info {
-      height: 4rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      align-items: center;
-      justify-content: center;   
-
-      .price {
-        font-weight: 900;
-        font-size: larger;
-        font-style: italic;
-      }
-    }
-    
-    .btn-vezi-toate-container {
-      margin: 0 auto;
-      color: var(--prim-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1.5px solid #59189af5;
-      border-radius: 10px;
-      width: 45%;
-      height: 40px;
-    }
   }
   
   // INFO
@@ -151,7 +110,45 @@
 
 
 
+  
+    // Media Query for Tablets (768px)
+    @media (min-width: 768px) {
+      // background-color: red;
 
+      .home-container-info {
+        display: block;
+
+  
+
+        .home-container-info-one, .home-container-info-two {
+          display: flex;
+          flex-direction: row;
+          p {
+            font-size: large;
+          }
+        }
+        .home-container-info-inner {
+
+          .info-icons {
+            color: var(--prim-color);
+            width: 2.5em;
+            height: 2.5em;
+          }
+
+          }
+        }
+    }
+  
+    // Media Query for Desktop (1024px)
+    @media (min-width: 1024px) {
+      
+    }
+  
+    // Media Query for Large Desktop (1280px)
+    @media (min-width: 1280px) {
+     
+    }
 }
+  
 
 

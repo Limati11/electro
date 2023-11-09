@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import PropTypes from 'prop-types';
 //  Style & Icons
-import "../pages/telefoane.scss";
+import "./ProductListing.scss";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { HiMiniChevronDown, HiMiniChevronUp } from "react-icons/hi2";
 
@@ -175,40 +175,37 @@ export default function ProductListing({
     const sortedProducts = [...filteredProducts].sort(sortProducts);
 
     const productElements = sortedProducts.map((product) => (
-        <div key={product.id} className="product-title">
-        <Link
-            to={`/${category}/${product.id}`}
-            state={{
-            search: `?${searchParams.toString()}`,
-            type: selectedFilters,
-            }}
-        >
-            <div className="product-info">
-                <img src={product.imageUrl} alt={product.name} />
-                <h3>
-                    {product.company} {product.name} {product.model}
-                </h3>
-                <h4>
-                    {product.memory}/{product.ram} GB
-                </h4>
-                <p>
-                    {product.price}
-                    <span> mdl</span>
-                </p>
-            </div>
-        </Link>
+        <div key={product.id} className="product-container">
+            <Link
+                to={`/${category}/${product.id}`}
+                state={{
+                search: `?${searchParams.toString()}`,
+                type: selectedFilters,
+                }}
+            >
+                <div className="product-content">
+                    <img src={product.imageUrl} alt={product.name} />
+                    <h3>
+                        {product.company} {product.name} {product.model}
+                    </h3>
+                    <h4>
+                        {product.memory}/{product.ram} GB
+                    </h4>
+                    <p>
+                        {product.price}
+                        <span> mdl</span>
+                    </p>
+                </div>
+            </Link>
         </div>
     ));
 
     if (loading) {
         return <h1>Loading...</h1>;
     }
-
     if (error) {
         return <h1>There was an error: {error.message}</h1>;
     }
-
-
 
     return (
         <div className="container">

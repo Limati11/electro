@@ -74,44 +74,40 @@ header {
 
   /* HEADER DOWN */
   .header-down {
-    // border: 1px solid red;
     background-color: var(--third-color);
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     .horizontal-scroll {
       overflow-x: auto;
       white-space: nowrap;
       display: flex;
-    }
-    
-      .horizontal-scroll ul {
-          // border: 1px solid blue;
-          display: flex;
-          padding: 0;
-          margin: 0;
-      }
-    
-      .horizontal-scroll li {
-        // border: 1px solid green;
-        padding: 1em;
-        
-      }
-        a {
-          // border: 1px solid red;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-        }
+
+      ul {
+        padding: 0 1em;
+        display: flex;
+        gap: 1.2em;
+        // padding: 1em;
+
+        li {
+          a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
           p {
             margin-bottom: 0;
-            // border: 1px solid pink;
           }
           .gadget-icons {
-            // border: 1px solid orange;
             height: 2.1rem;
             width: 2.1rem;
-          }
 
+          }
+        }
+      }
+    }
   }
 
   /* BURGER MENU STYLE */
@@ -158,8 +154,8 @@ header {
           gap: 6px;
         }
         .burger-icons {
-          width: 23px;
-          height: 23px;
+          width: 1.5rem;
+          height: 1.5rem;
         }
 
       .burger-container-down {
@@ -177,5 +173,95 @@ header {
         }
 
     }
+  }
+
+}
+
+// Media Query for Tablets (768px)
+@media (min-width: 768px) {
+  header {
+    .burger-container { 
+      
+      &.open {
+        width: 50vw;
+        
+        .burger-container-up {
+          font-size: 1.5rem;
+        }
+
+        .burger-icons {
+          width: 2.2rem;
+          height: 2.2rem;
+        }
+      }
+      
+    }
+
+    .header-up {
+      padding: 0.5em 1.5em;
+    }
+    .header-middle{
+      // border: 1px solid red;
+      background-color: white;
+      height: 4.5rem;
+      padding: 0 1.5em;
+      gap: 1em;
+  
+        h2 {
+          font-size: 2.4em;
+        }
+
+      .header-middle-icons {
+        // border: 1px solid blue;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        padding-left: auto;
+        padding-top: 3px; // text is in the center
+        gap: 1.2em;
+
+        .header-icon {
+          height: 2rem;
+          width: 2rem;
+        }
+      } 
+    }
+
+    .horizontal-scroll {
+      display: flex;
+      margin: 0.5em auto;
+
+      ul {
+        // border: 1px solid red;
+        padding-left: 0;
+        width: 80vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        li {
+         
+          a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            p {
+              margin-bottom: 0;
+              font-size: larger;
+            }
+            .gadget-icons {
+              height: 3rem;
+              width: 3em;
+            }
+          }
+          
+        }
+      }
+    }
+
+
+
   }
 }
