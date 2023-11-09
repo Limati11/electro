@@ -22,6 +22,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
 
+
+// PHONES
 const phonesCollection = collection(db, "phones")
 
 export async function getPhones() {
@@ -35,6 +37,73 @@ export async function getPhones() {
 
 export async function getPhone(id) {
     const docRef = doc(db, "phones", id)
+    const snapshot = await getDoc(docRef)
+    return {
+        ...snapshot.data(),
+        id: snapshot.id
+    }
+}
+
+
+
+// LAPTOPS
+const laptopsCollection = collection(db, "laptops")
+
+export async function getLaptops() {
+    const snapshot = await getDocs(laptopsCollection)
+    const laptop = snapshot.docs.map(doc => ({
+        ...doc.data(),
+        id: doc.id
+    }))
+    return laptop
+}
+
+export async function getLaptop(id) {
+    const docRef = doc(db, "laptops", id)
+    const snapshot = await getDoc(docRef)
+    return {
+        ...snapshot.data(),
+        id: snapshot.id
+    }
+}
+
+
+// TABLETS
+const tabletsCollection = collection(db, "tablets")
+
+export async function getTablets() {
+    const snapshot = await getDocs(tabletsCollection)
+    const tablet = snapshot.docs.map(doc => ({
+        ...doc.data(),
+        id: doc.id
+    }))
+    return tablet
+}
+
+export async function getTablet(id) {
+    const docRef = doc(db, "tablets", id)
+    const snapshot = await getDoc(docRef)
+    return {
+        ...snapshot.data(),
+        id: snapshot.id
+    }
+}
+
+
+// GADGETS
+const gadgetsCollection = collection(db, "gadgets")
+
+export async function getGadgets() {
+    const snapshot = await getDocs(gadgetsCollection)
+    const gadget = snapshot.docs.map(doc => ({
+        ...doc.data(),
+        id: doc.id
+    }))
+    return gadget
+}
+
+export async function getGadget(id) {
+    const docRef = doc(db, "gadgets", id)
     const snapshot = await getDoc(docRef)
     return {
         ...snapshot.data(),
