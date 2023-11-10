@@ -4,15 +4,11 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 export default function SliderMobile() {
-  const [images, setImages] = useState([
-    '/assets/home-slider/1b.webp',
-    '/assets/home-slider/2b.webp',
-    '/assets/home-slider/3b.webp',
-    '/assets/home-slider/4b.webp'
-  ]);
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     const mql = window.matchMedia('(max-width: 480px)');
+
     const handleScreenResize = (e) => {
       if (e.matches) {
         setImages([
@@ -30,6 +26,8 @@ export default function SliderMobile() {
         ]);
       }
     };
+
+    handleScreenResize(mql); // Initially set images based on screen width
 
     mql.addEventListener('change', handleScreenResize);
 
