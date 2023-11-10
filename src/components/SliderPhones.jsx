@@ -61,7 +61,7 @@ export default function PhonesSlider() {
     autoplaySpeed: 4000,
     infinite: true,
     dots: false,
-    arrows: false,
+    arrows: true,
     speed: 2000,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,

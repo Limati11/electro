@@ -285,7 +285,7 @@ export default function ProductListing({
                                             {categoryOptions.map((category) => (
                                                 <div
                                                     key={category}
-                                                    onClick={() => handleFilterChange("company", category)}
+                                                    onClick={() => handleFilterChange("category", category)}
                                                     className={selectedFilters.category === category 
                                                             ? "selected-subfilter" : "unselected-subfilter"}
                                                 >
@@ -323,7 +323,7 @@ export default function ProductListing({
                                         {colorOptions.map((color) => (
                                             <div
                                                 key={color}
-                                                onClick={() => handleFilterChange("company", color)}
+                                                onClick={() => handleFilterChange("color", color)}
                                                 className={selectedFilters.color === color ? "selected-subfilter" : "unselected-subfilter"}
                                             >
                                                 <p>{color}</p>
@@ -339,7 +339,7 @@ export default function ProductListing({
                                         {memoryOptions.map((memory) => (
                                             <div
                                                 key={memory}
-                                                onClick={() => handleFilterChange("company", memory)}
+                                                onClick={() => handleFilterChange("memory", memory)}
                                                 className={selectedFilters.memory === memory ? "selected-subfilter" : "unselected-subfilter"}
                                             >
                                                 <p>{memory} GB</p>
@@ -355,7 +355,7 @@ export default function ProductListing({
                                         {ramOptions.map((ram) => (
                                             <div
                                                 key={ram}
-                                                onClick={() => handleFilterChange("company", ram)}
+                                                onClick={() => handleFilterChange("ram", ram)}
                                                 className={selectedFilters.ram === ram ? "selected-subfilter" : "unselected-subfilter"}
                                             >
                                                 <p>{ram} GB</p>
