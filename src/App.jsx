@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Telefoane from './pages/Telefoane';
-import TelefonDetail from './pages/TelefonDetail';
+import ProductDetail from './pages/ProductDetail';
 import Laptopuri from './pages/Laptopuri';
 import Gadgeturi from './pages/Gadgeturi';
 import Tablete from './pages/Tablete';
@@ -26,7 +26,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="telefoane" element={<Telefoane />} />
-          <Route path="telefoane/:id" element={<TelefonDetail />} />
+          <Route path="/:category/product/:id" element={<ProductDetail />} />
           <Route path="laptopuri" element={<Laptopuri />} />
           <Route path="gadgeturi" element={<Gadgeturi />} />
           <Route path="tablete" element={<Tablete />} />
@@ -43,5 +43,3 @@ export default function App() {
     </BrowserRouter>
   );
 }
-
-// ReactDOM.createRoot(document.getElementById('root')).render(<App />);

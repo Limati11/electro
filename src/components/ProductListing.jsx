@@ -172,7 +172,7 @@ export default function ProductListing({
     const productElements = sortedProducts.map((product) => (
         <div key={product.id} className="product-content">
             <Link
-                to={`/${category}/${product.id}`}
+                to={`/${category}/product/${product.id}`}
                 state={{
                 search: `?${searchParams.toString()}`,
                 type: selectedFilters,
@@ -232,7 +232,7 @@ export default function ProductListing({
                             ${filterOpenStates.isFilterSortareOpen ? "open" : ""} 
                             ${filtersChanged ? "blink-animation" : ""} `}>
                             <div onClick={() => handleSortChange("name")}>
-                                Nume {sortCriteria === "name" && sortOrder === "asc" && "↑"}
+                                <p>Nume</p>{sortCriteria === "name" && sortOrder === "asc" && "↑"}
                                 {sortCriteria === "name" && sortOrder === "desc" && "↓"}
                             </div>
                             <div onClick={() => handleSortChange("price")}>
@@ -240,7 +240,7 @@ export default function ProductListing({
                                 {sortCriteria === "price" && sortOrder === "desc" && "↓"}
                             </div>
                             <div onClick={() => handleSortChange("default")}>
-                                Resetare
+                                <p>Resetare</p>
                             </div>
                         </div>
                     
