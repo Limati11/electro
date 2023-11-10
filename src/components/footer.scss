@@ -2,39 +2,43 @@ footer {
     background-color: var(--prim-color);
 
     .footer {
-        margin: 0 auto;
-        width: 80%;
-        padding: 10px;
         color: white;
+        width: 80%;
+        margin: 0 auto;
+        padding: 0 1em;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+       
     
         p {
             font-size: 0.7em;
             color: whitesmoke;
             font-weight: normal;
             line-height: 36px;
+            margin: 0;
         }
     
         img {
             margin-bottom: 1rem;
-            width: 100%;
+            width: 70%;
         }
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
 
     footer {
         .footer {
-            width: 95%;
+            padding: 1em 1em 0;
+            gap: 1em;
+
             p {
-                font-size: 1em;
+                font-size: 0.8em;
             }
             img {
-                width: 80%;
+                width: 70%;
             }
         }
     }

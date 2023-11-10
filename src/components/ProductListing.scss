@@ -3,7 +3,8 @@
     
     // PRODUCT CONTAINER STYLE
     .product-container {
-
+        // border: 1px solid red;
+        
         .product-content {
             // border: 1px solid red;
             background-color: var(--third-color);
@@ -16,15 +17,24 @@
             align-items: center;
             justify-content: center;
 
-            img {
-                border-radius: 0.5em;
+            .product-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    border-radius: 0.5em;
+                }
+                h3{
+                    margin-bottom:  -0.8em;
+                }
+                h4 {
+                    margin-bottom: -0.4em;
+                }
             }
-            h3{
-                margin-bottom:  -0.8em;
-            }
-            h4 {
-                margin-bottom: -0.4em;
-            }
+
+            
         } 
     }
         
@@ -168,7 +178,8 @@
             border-bottom-right-radius: 0.6em;
                 
             &.open {
-                max-height: 1000px;
+                max-height: 420px;
+                overflow-y: auto;
                 
             }
 
@@ -213,6 +224,7 @@
 
                     &.open {
                         max-height: 400px;
+                        overflow-y: auto;
                         width: 100%;
                         color: black;
                     }
@@ -303,11 +315,13 @@
     @media (min-width: 480px) {
         .product-container {
             display: flex;
+            align-items: center;
             flex-wrap: wrap;
-            justify-content: space-between;
+            // justify-content: space-between;
     
         .product-content {
-                width: 30%;
+                width: 29%;
+                margin: 0 auto;
                 margin-bottom: 2%; 
             }
         }
@@ -360,7 +374,6 @@
 
             .product-content {
                 width: 30%; 
-                margin-bottom: 2%; 
             }
         
         }
@@ -370,8 +383,7 @@
         .product-container {
 
             .product-content {
-                width: 20%; 
-                margin-bottom: 2%; 
+                width: 23%; 
             }
             
         }
@@ -383,7 +395,7 @@
         .product-container {
 
             .product-content {
-                width: 16%; 
+                width: 15%; 
                 margin-bottom: 2%; 
             }
             
