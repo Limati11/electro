@@ -7,6 +7,7 @@ import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { HiMiniChevronDown, HiMiniChevronUp } from "react-icons/hi2";
 
 
+
 export default function ProductListing({
         category,
         fetchData,
@@ -39,19 +40,15 @@ export default function ProductListing({
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [filtersChanged, setFiltersChanged] = useState(false);
-
-    // Costumize filters based on category
     const [selectedFilters, setSelectedFilters] = useState({
         ...filterOptions,
         });
-
     const [filterOpenStates, setFilterOpenStates] = useState({
         isFilterOpen: false,
         ...filterConfig,
         isFilterSortareOpen: false,
         isFilterPretOpen: true,
         });
-
     const [sortCriteria, setSortCriteria] = useState(sortConfig.criteria);
     const [sortOrder, setSortOrder] = useState(sortConfig.order);
         
@@ -118,32 +115,30 @@ export default function ProductListing({
         // }));
     };
 
+    
 
     const filterProduct = (product) => {
-        const {
-            minPrice,
-            maxPrice,
-            category,
-            company,
-            name,
-            model,
-            color,
-            memory,
-            ram,
-        } = selectedFilters;
+        const { minPrice, maxPrice, category, company, name, model, color, memory, ram } = selectedFilters;
+        const productCategory = product.category && product.category.toLowerCase();
+        const productCompany = product.company.toLowerCase();
+        const productName = product.name.toLowerCase();
+        const productModel = product.model && product.model.toLowerCase();
+        const productColor = product.color.toLowerCase();
+        const productMemory = product.memory;
+        const productRam = product.ram;
     
         return (
-            (minPrice === "" || product.price >= parseFloat(minPrice)) &&
-            (maxPrice === "" || product.price <= parseFloat(maxPrice)) &&
-            (!category || product.category.toLowerCase() === category.toLowerCase()) &&
-            (!company || product.company.toLowerCase() === company.toLowerCase()) &&
-            (!name || product.name.toLowerCase().includes(name.toLowerCase())) &&
-            (!model || product.model.toLowerCase().includes(model.toLowerCase())) &&
-            (!color || product.color.toLowerCase() === color.toLowerCase()) &&
-            (!memory || product.memory.toLowerCase() === memory.toLowerCase()) &&
-            (!ram || product.ram.toLowerCase() === ram.toLowerCase())
+          (minPrice === "" || product.price >= parseFloat(minPrice)) &&
+          (maxPrice === "" || product.price <= parseFloat(maxPrice)) &&
+          (!category || productCategory === category.toLowerCase()) &&
+          (!company || productCompany === company.toLowerCase()) &&
+          (!name || productName.includes(name.toLowerCase())) &&
+          (!model || productModel.includes(model.toLowerCase())) &&
+          (!color || productColor === color.toLowerCase()) &&
+          (!memory || productMemory === memory) &&
+          (!ram || productRam === ram)
         );
-    };
+      };
 
     const filteredProducts = products.filter(filterProduct);
 

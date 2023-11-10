@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"
 import "./home.scss"
 import SliderTop from "../components/SliderTop"
@@ -10,8 +10,19 @@ import { BsPhoneFlip } from "react-icons/bs"
 import { MdPayment, MdStars } from "react-icons/md"
 
 
-
 export default function Home() {
+    const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 468);
+    useEffect(() => {
+      // Update the isWideScreen state when the window is resized
+      const handleResize = () => {
+        setIsWideScreen(window.innerWidth > 480);
+      };
+      window.addEventListener('resize', handleResize);
+      return () => {
+        // Clean up the event listener when the component unmounts
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
 
     return (
         <div className="home-container">
@@ -52,7 +63,12 @@ export default function Home() {
 
             <div className="container home-container-gaming">
                 <Link className="gaming-link" to="/gaming" >
-                <div className="gaming-div"></div>
+                    <span className="gaming-div">
+                        <img
+                            src={isWideScreen ? '/assets/home-gaming/gaming768.jpg' : '/assets/home-gaming/gaming.jpg'}
+                            alt="Gaming Image"
+                        />
+                    </span>
                 </Link>
             </div>
 

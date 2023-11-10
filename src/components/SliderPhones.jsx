@@ -39,7 +39,7 @@ export default function PhonesSlider() {
   useEffect(() => {
     function handleResize() {
       // Adjust slidesToShow based on window width
-      setSlidesToShow(window.innerWidth >= 768 ? 2 : 1);
+      setSlidesToShow(window.innerWidth >= 1280 ? 5 : window.innerWidth >= 1024 ? 4 : window.innerWidth >= 768 ? 3 : window.innerWidth >= 480 ? 2 : 1);
     }
     handleResize();
     window.addEventListener('resize', handleResize);

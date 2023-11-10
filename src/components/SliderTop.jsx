@@ -1,10 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
-
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 export default function SliderMobile() {
+  const [images, setImages] = useState([
+    '/assets/home-slider/1b.webp',
+    '/assets/home-slider/2b.webp',
+    '/assets/home-slider/3b.webp',
+    '/assets/home-slider/4b.webp'
+  ]);
+
+  useEffect(() => {
+    const mql = window.matchMedia('(max-width: 480px)');
+    const handleScreenResize = (e) => {
+      if (e.matches) {
+        setImages([
+          '/assets/home-slider/home-slider-1.webp',
+          '/assets/home-slider/home-slider-2.webp',
+          '/assets/home-slider/home-slider-3.webp',
+          '/assets/home-slider/home-slider-4.webp'
+        ]);
+      } else {
+        setImages([
+          '/assets/home-slider/1b.webp',
+          '/assets/home-slider/2b.webp',
+          '/assets/home-slider/3b.webp',
+          '/assets/home-slider/4b.webp'
+        ]);
+      }
+    };
+
+    mql.addEventListener('change', handleScreenResize);
+
+    return () => {
+      mql.removeEventListener('change', handleScreenResize);
+    };
+  }, []);
+
   const settings = {
     autoplay: true,
     autoplaySpeed: 6000,
@@ -18,36 +51,11 @@ export default function SliderMobile() {
 
   return (
     <Slider {...settings}>
-      <div>
-        <img src="/assets/home-slider/home-slider-1.webp" alt="Image 1" />
-      </div>
-      <div>
-        <img src="/assets/home-slider/home-slider-2.webp" alt="Image 2" />
-      </div>
-      <div>
-        <img src="/assets/home-slider/home-slider-3.webp" alt="Image 3" />
-      </div>
-      <div>
-        <img src="/assets/home-slider/home-slider-4.webp" alt="Image 4" />
-      </div>
-      <div>
-        <img src="/assets/home-slider/home-slider-5.webp" alt="Image 5" />
-      </div>
-      <div>
-        <img src="/assets/home-slider/home-slider-6.webp" alt="Image 6" />
-      </div>
-      <div>
-        <img src="/assets/home-slider/home-slider-7.webp" alt="Image 6" />
-      </div>
-      <div>
-        <img src="/assets/home-slider/home-slider-8.webp" alt="Image 6" />
-      </div>
-      <div>
-        <img src="/assets/home-slider/home-slider-9.webp" alt="Image 6" />
-      </div>
-      <div>
-        <img src="/assets/home-slider/home-slider-10.webp" alt="Image 6" />
-      </div>
+      {images.map((image, index) => (
+        <div className='slider-top-image-containeri' key={index}>
+          <img src={image} alt={`Image ${index + 1}`} />
+        </div>
+      ))}
     </Slider>
   );
 }

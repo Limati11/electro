@@ -12,6 +12,18 @@
       "i i i i i i i i i i i i";
   grid-row-gap: 3rem;
 
+  @media (min-width: 480px) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(0.5, 1fr);
+    grid-template-areas: 
+        "s s s s s s s s s s s s"
+        "ti ti ti ti ti ti p p p p p p"
+        "g g g g g g g g g g g g"
+        "ph ph ph ph ph ph ph ph ph ph ph ph"
+        "i i i i i i i i i i i i";
+  }
+  
   
   // SLIDER
   .home-container-slider {
@@ -24,6 +36,25 @@
       max-height: 100vh;
     }
   }
+  @media (min-width: 480px) {
+    .home-container-slider {
+      // border: 1px solid red;
+      grid-area: s;
+      width: 100%;
+      height: 100%;
+      
+      .slider-top-image-containeri {
+        // border: 2px solid blue;
+        // margin-bottom: 0;
+        
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+ 
 
 
   // PRODUCTS
@@ -60,6 +91,7 @@
   }
 
 
+
   // TRADEIN
   .home-container-tradein {
     grid-area: ti;
@@ -71,38 +103,29 @@
     }
   }
 
+
   
   // GAMING
+
   .home-container-gaming {
     grid-area: g;
-    // border: 1px solid red;
     width: 100%;
-    height: 65vh;
+    height: 100%;
     display: block;
+    border-radius: 0;
 
     .gaming-div {
-      // border: 1px solid blue;
-      background-image: url('/assets/home-gaming/gaming.jpg');
-      background-size: cover;
-      background-position: center; 
-      height: 100%;     
-      width: 100%;
-    }
-  }
-  @media (min-width: 768px) {
-      
-    .home-container-gaming {
       // border: 1px solid red;
       width: 100%;
       height: 100%;
-      .gaming-div {
-        background-image: url('/assets/home-gaming/gaming768.jpg');
-      }
+      background-size: contain;
+      background-position: center;
     }
 
-    
   }
-  
+    
+
+
   // INFO
   .home-container-info {
     // border: 1px solid red;
@@ -124,85 +147,47 @@
         width: 30px;
         height: 30px;
       }
-     
     }
-
   }
-
-}
-
-  
-// Media Query for Tablets (768px)
-@media (min-width: 768px) {
-  .home-container {
-    grid-template-rows: repeat(5, 0.5fr);
-    grid-template-areas: 
-        "s s s s s s s s s s s s"
-        "ti ti ti ti ti ti p p p p p p"
-        "g g g g g g g g g g g g"
-        "ph ph ph ph ph ph ph ph ph ph ph ph"
-        "i i i i i i i i i i i i";
-
-
-    .home-container-slider {
-      border: 1px solid red;
-      grid-area: s;
-      width: 100%;
-  
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    // .home-container-gaming {
-    //   // border: 2px solid blue;
-    //   width: 100%;
-    //   height: 100%;
-
-    //   .gaming-div {
-    //     width: 100%;
-    //     height: 100%;
-    //     background-image: url("/assets/home-gaming/gaming.jpg");
-    //   }
-      
-    // }
-
+  @media (min-width: 480px) {
     .home-container-info {
       display: block;
+      // border: 1px solid red;
+      // width: 100vw;
+      height: 100%;
 
       .home-container-info-one, .home-container-info-two {
+        // border: 1px solid blue;
         display: flex;
         flex-direction: row;
+
         p {
-          font-size: medium;
+          // border: 1px solid yellow;
+          text-align: center;
         }
       }
       .home-container-info-inner {
+        // border: 1px solid yellow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         .info-icons {
           color: var(--prim-color);
           width: 2em;
           height: 2em;
         }
-
-        }
+      }
     }
   }
-}
-    
-
-  
-    // Media Query for Desktop (1024px)
-    @media (min-width: 1024px) {
+  // @media (min-width: 1024px) {
+  //   .home-container-info {
       
-    }
-  
-    // Media Query for Large Desktop (1280px)
-    @media (min-width: 1280px) {
-     
-    }
+  //   }
+
+  // }
+
+}
 
   
-
 

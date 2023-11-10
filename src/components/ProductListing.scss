@@ -294,42 +294,42 @@
         }
     }   
 
-
-    // Media Query for Tablets (768px)
-    @media (min-width: 768px) {
+    @media (min-width: 480px) {
         .product-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-        }
-        
-          .product-content {
-            width: 45%; /* Adjust as needed */
-            margin-bottom: 2%; /* Adjust the gap between products */
+    
+        .product-content {
+                width: 30%;
+                margin-bottom: 2%; 
             }
+        }
+    
         .filter-top {
             p {
                 font-size: larger;
             }
         }
+    
         .filter-bottom-inner {
             p {
                 font-size: larger;
             }
         }
-
+    
         .filters {
             h4 {
                 font-size: larger;
             }
         }
-
+    
         .subfilters {
             p {
                 margin: 0.5em;
                 font-size: large;
             }
-            
+        
             input {
                 border: 1px solid red;
                 width: 30%;
@@ -337,26 +337,50 @@
                 padding: 2em;
             }
         }
+    
         .sortare-pret-inner {
-            input {
-                border: 1px solid red;
-                width: 30%;
-                height: 40%;
-                padding: 2em;
+        input {
+            border: 1px solid red;
+            width: 30%;
+            height: 40%;
+            padding: 2em;
+        }
+        }
+    }
+  
+    // Media Query for Tablets (768px)
+    @media (min-width: 768px) {
+        .product-container {
+
+            .product-content {
+                width: 30%; 
+                margin-bottom: 2%; 
             }
+        
         }
     }
 
     @media (min-width: 1024px) {
         .product-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+
+            .product-content {
+                width: 20%; 
+                margin-bottom: 2%; 
+            }
+            
         }
         
-          .product-content {
-            width: 30%; /* Adjust as needed */
-            margin-bottom: 2%; /* Adjust the gap between products */
+          
+    }
+
+    @media (min-width: 1280px) {
+        .product-container {
+
+            .product-content {
+                width: 16%; 
+                margin-bottom: 2%; 
             }
+            
+        }
     }
 }
