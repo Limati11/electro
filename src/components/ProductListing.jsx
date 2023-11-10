@@ -175,7 +175,7 @@ export default function ProductListing({
     const sortedProducts = [...filteredProducts].sort(sortProducts);
 
     const productElements = sortedProducts.map((product) => (
-        <div key={product.id} className="product-container">
+        <div key={product.id} className="product-content">
             <Link
                 to={`/${category}/${product.id}`}
                 state={{
@@ -183,7 +183,7 @@ export default function ProductListing({
                 type: selectedFilters,
                 }}
             >
-                <div className="product-content">
+                <div className="product-info">
                     <img src={product.imageUrl} alt={product.name} />
                     <h3>
                         {product.company} {product.name} {product.model}
@@ -209,7 +209,9 @@ export default function ProductListing({
 
     return (
         <div className="container">
-            <div className="phones-container" >
+            <div className="page-content" >
+
+                
                 <div className="filter-container">
                     {/* FILTER CLOSED */}
                     <div className="filter-top" onClick={() => toggleFilterOpen("isFilterOpen")}>
@@ -239,7 +241,7 @@ export default function ProductListing({
                                 {sortCriteria === "name" && sortOrder === "desc" && "↓"}
                             </div>
                             <div onClick={() => handleSortChange("price")}>
-                                Preț {sortCriteria === "price" && sortOrder === "asc" && "↑"}
+                                <p>Preț</p> {sortCriteria === "price" && sortOrder === "asc" && "↑"}
                                 {sortCriteria === "price" && sortOrder === "desc" && "↓"}
                             </div>
                             <div onClick={() => handleSortChange("default")}>
@@ -260,15 +262,15 @@ export default function ProductListing({
                                 </div>
                                     <div className={`subfilters ${filterOpenStates.isFilterPretOpen ? "open" : ""}`}>
                                         <div className="sortare-pret-inner">
-                                            <label>Preț minim:</label>
+                                            <label><p>Preț minim:</p></label>
                                             <input
                                             type="number"
                                             value={selectedFilters.minPrice || ""}
-                                            onChange={(e) => handleFilterChange("minPrice", e.tarvalue)}
+                                            onChange={(e) => handleFilterChange("minPrice", e.target.value)}
                                             />
                                         </div>
                                         <div className="sortare-pret-inner second">
-                                            <label>Preț maxim:</label>
+                                            <label><p>Preț maxim:</p></label>
                                             <input
                                             type="number"
                                             value={selectedFilters.maxPrice || ""}
@@ -292,7 +294,7 @@ export default function ProductListing({
                                                     className={selectedFilters.category === category 
                                                             ? "selected-subfilter" : "unselected-subfilter"}
                                                 >
-                                                    {category}
+                                                    <p>{category}</p>
                                                 </div>
                                             ))}
                                         </div> 
@@ -313,7 +315,7 @@ export default function ProductListing({
                                                 className={selectedFilters.company === company 
                                                         ? "selected-subfilter" : "unselected-subfilter"}
                                             >
-                                                {company}
+                                                <p>{company}</p>
                                             </div>
                                         ))}
                                     </div> 
@@ -329,7 +331,7 @@ export default function ProductListing({
                                                 onClick={() => handleFilterChange("company", color)}
                                                 className={selectedFilters.color === color ? "selected-subfilter" : "unselected-subfilter"}
                                             >
-                                                {color}
+                                                <p>{color}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -345,7 +347,7 @@ export default function ProductListing({
                                                 onClick={() => handleFilterChange("company", memory)}
                                                 className={selectedFilters.memory === memory ? "selected-subfilter" : "unselected-subfilter"}
                                             >
-                                                {memory} GB
+                                                <p>{memory} GB</p>
                                             </div>
                                         ))}
                                     </div>
@@ -361,7 +363,7 @@ export default function ProductListing({
                                                 onClick={() => handleFilterChange("company", ram)}
                                                 className={selectedFilters.ram === ram ? "selected-subfilter" : "unselected-subfilter"}
                                             >
-                                                {ram} GB
+                                                <p>{ram} GB</p>
                                             </div>
                                         ))}
                                     </div>
@@ -373,9 +375,10 @@ export default function ProductListing({
                             <button onClick={() => setFilterOpenStates("isFilterOpen")}>ÎNCHIDE</button>
                         </div>
                     </div>
+                
                 </div>
 
-                <div className="phone-list">{productElements}</div>
+                <div className="product-container">{productElements}</div>
             </div>
         </div> 
     )

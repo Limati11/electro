@@ -12,7 +12,7 @@ footer {
         justify-content: center;
     
         p {
-            font-size: 13px;
+            font-size: 0.8;
             color: whitesmoke;
             font-weight: normal;
             line-height: 36px;
@@ -25,5 +25,20 @@ footer {
     }
 }
 
+@media (min-width: 768px) {
+
+    footer {
+        .footer {
+            width: 95%;
+            p {
+                font-size: 1em;
+            }
+            img {
+                width: 80%;
+            }
+        }
+    }
+    
+}
 
 

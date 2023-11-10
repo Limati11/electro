@@ -181,34 +181,38 @@ header {
 @media (min-width: 768px) {
   header {
     .burger-container { 
-      
       &.open {
         width: 50vw;
         
-        .burger-container-up {
-          font-size: 1.5rem;
-        }
+        .burger-container-close-button {
+        
+          .burger-container-up {
+           
+            font-size: 1.0rem;
+          }
 
-        .burger-icons {
-          width: 2.2rem;
-          height: 2.2rem;
+          .burger-icons {
+            width: 2.0rem;
+            height: 2.0rem;
+          }
         }
       }
-      
     }
+
 
     .header-up {
       padding: 0.5em 1.5em;
     }
+
     .header-middle{
       // border: 1px solid red;
       background-color: white;
-      height: 4.5rem;
+      height: 4rem;
       padding: 0 1.5em;
       gap: 1em;
   
         h2 {
-          font-size: 2.4em;
+          font-size: 2.2em;
         }
 
       .header-middle-icons {
@@ -221,47 +225,49 @@ header {
         gap: 1.2em;
 
         .header-icon {
-          height: 2rem;
-          width: 2rem;
+          height: 1.5rem;
+          width: 1.5rem;
         }
       } 
     }
-
-    .horizontal-scroll {
-      display: flex;
-      margin: 0.5em auto;
-
-      ul {
-        // border: 1px solid red;
-        padding-left: 0;
-        width: 80vw;
+  
+    .header-down {
+      .horizontal-scroll {
+        // border: 1px solid blue;
         display: flex;
-        align-items: center;
-        justify-content: space-around;
-
-        li {
-         
-          a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-
-            p {
-              margin-bottom: 0;
-              font-size: larger;
+        margin: 0 auto;
+        width: 85vw;
+  
+        ul {
+          // border: 1px solid red;
+          padding-left: 0;
+          width: 85vw;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+  
+          li {
+           
+            a {
+              p {
+                margin-top: 0.7em;
+                margin-bottom: 0;
+                font-size: medium;
+              }
+              .gadget-icons {
+                height: 1.8rem;
+                width: 1.8rem;
+              }
             }
-            .gadget-icons {
-              height: 3rem;
-              width: 3em;
-            }
+            
           }
-          
         }
       }
     }
+    
 
 
-
+    
+  
   }
 }

@@ -52,9 +52,7 @@ export default function Home() {
 
             <div className="container home-container-gaming">
                 <Link className="gaming-link" to="/gaming" >
-                    <div className="gaming-div">
-                        <img src="/assets/home-gaming/gaming.jpg" alt=""></img>
-                    </div>
+                <div className="gaming-div"></div>
                 </Link>
             </div>
 
